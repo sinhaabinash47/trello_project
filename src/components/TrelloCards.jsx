@@ -118,7 +118,7 @@ export const TrelloCards = ({
                           <p className="card-text fw-bold mb-0 mt-2">
                             {item?.title}
                           </p>
-                          <p className="card-text">
+                          <p className="card-text" style={{textAlign:"justify"}}>
                             {showFullDescriptions[index]
                               ? item?.description
                               : truncateDescription(item?.description)}
@@ -243,7 +243,7 @@ export const TrelloCards = ({
                           <p className="card-text fw-bold mb-0 mt-2">
                             {item?.title}
                           </p>
-                          <p className="card-text">
+                          <p className="card-text" style={{textAlign:"justify"}}>
                             {showFullDescriptions[index]
                               ? item?.description
                               : truncateDescription(item?.description)}
@@ -366,7 +366,7 @@ export const TrelloCards = ({
                           <p className="card-text fw-bold mb-0 mt-2">
                             {item?.title}
                           </p>
-                          <p className="card-text">
+                          <p className="card-text" style={{textAlign:"justify"}}>
                             {showFullDescriptions[index]
                               ? item?.description
                               : truncateDescription(item?.description)}

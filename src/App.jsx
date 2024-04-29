@@ -9,12 +9,12 @@ import AddCard from "./components/AddCard.jsx";
 function App() {
   const [refresh, setRefresh] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [modalType, setModalType] = useState("jhvhgv");
 
   const handleClose = () => {
-    setShowModal(false)
-    setSelectedCardId(0)
-    setIsCreated(true)
-    console.log("asdadasasd");
+    setShowModal(false);
+    setSelectedCardId(0);
+    setIsCreated(true);
   };
   const handleShow = () => setShowModal(true);
   const [isCreated, setIsCreated] = useState(true);
@@ -25,8 +25,15 @@ function App() {
   return (
     <>
       <div>
-        <Navbar setShowModal={setShowModal} setIsCreated={setIsCreated} />
-        <TrelloLayouts toggleRefresh={toggleRefresh} setSelectedCardId={setSelectedCardId} refresh={refresh} setShowModal={setShowModal} setIsCreated={setIsCreated}/>
+        <Navbar setShowModal={setShowModal} setIsCreated={setIsCreated} setModalType={setModalType} />
+        <TrelloLayouts
+          toggleRefresh={toggleRefresh}
+          setSelectedCardId={setSelectedCardId}
+          refresh={refresh}
+          setShowModal={setShowModal}
+          setIsCreated={setIsCreated}
+          setModalType={setModalType}
+        />
         <AddCard
           showModal={showModal}
           setShowModal={setShowModal}
@@ -36,6 +43,8 @@ function App() {
           isCreated={isCreated}
           setIsCreated={setIsCreated}
           selectedCardId={selectedCardId}
+          modalType={modalType}
+          setModalType={setModalType}
         />
       </div>
     </>

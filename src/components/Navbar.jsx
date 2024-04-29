@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/navbar.css";
 import users from "../assets/profile.jpeg";
 
-export const Navbar = ({setShowModal,setIsCreated}) => {
+export const Navbar = ({setShowModal,setIsCreated, setModalType}) => {
   return (
     <nav
       className="navbar navbar-expand-lg"
@@ -44,6 +44,8 @@ export const Navbar = ({setShowModal,setIsCreated}) => {
               onClick={()=>{
                 setIsCreated(true)
                 setShowModal(true)
+                setModalType("");
+                
               }}
             >
               <p className="btn glass-morphism my-auto">

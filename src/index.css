@@ -1,4 +1,57 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 body {
   margin: 0;
   padding: 0;
 }
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(71, 66, 66, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.sticky-body {
+  position: sticky;
+  top: 0;
+  background-color: rgb(235, 235, 240);
+  z-index: 10;
+}
+
+.first-avtar {
+  position: relative;
+  z-index: 6;
+}
+.second-avtar {
+  position: relative;
+  z-index: 5;
+  right: 3px;
+}
+.third-avtar {
+  position: relative;
+  z-index: 4;
+  right: 6px;
+}
+
+/* .scrollbar-yaxis { */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(150, 86, 250);
+    background: linear-gradient(90deg, rgba(150, 86, 250, 1) 0%, rgba(255, 119, 187, 1) 100%, rgba(105, 152, 227, 1) 100%);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(61, 61, 61);
+  }
+/* } */

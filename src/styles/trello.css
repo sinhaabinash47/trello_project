@@ -1,0 +1,38 @@
+.expanded-sidebar {
+  width: 200px;
+  transition: width 0.5s linear; 
+}
+.collapsed-sidebar {
+  width: 70px;
+  transition: width 0.5s linear; 
+}
+.rotate-collapsible-logo-left {
+  transform: rotate(180deg);
+  transition: transform 0.5s linear;
+}
+
+.rotate-collapsible-logo-right {
+  transform: rotate(0deg);
+  transition: transform 0.5s linear;
+}
+
+
+
+.trello_background {
+  background: rgb(150, 86, 250);
+  background: linear-gradient(
+    90deg,
+    rgba(150, 86, 250, 1) 0%,
+    rgba(255, 119, 187, 1) 100%,
+    rgba(105, 152, 227, 1) 100%
+  );
+}
+.sidebard_background {
+  background: rgb(149, 139, 164);
+  background: linear-gradient(
+    90deg,
+    rgba(149, 139, 164, 1) 0%,
+    rgba(47, 104, 195, 1) 0%,
+    rgba(137, 70, 187, 1) 100%
+  );
+}

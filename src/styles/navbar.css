@@ -1,0 +1,24 @@
+.header_icon {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.has-search-right {
+  position: relative;
+}
+.has-search-right .form-control {
+  padding-right: 2.375rem;
+}
+.has-search-right .form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+}

@@ -16,7 +16,7 @@ export const TrelloLayouts = ({
   setIsCreated,
   setSelectedCardId,
   toggleRefresh,
-  setModalType
+  setModalType,
 }) => {
   const [toggleSideBar, setToggleSideBar] = useState(false);
   const [getData, setGetData] = useState([]);

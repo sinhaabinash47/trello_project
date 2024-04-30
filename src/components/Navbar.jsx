@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/navbar.css";
 import users from "../assets/profile.jpeg";
 
-export const Navbar = ({setShowModal,setIsCreated, setModalType}) => {
+export const Navbar = ({ setShowModal, setIsCreated, setModalType }) => {
   return (
     <nav
       className="navbar navbar-expand-lg"
@@ -34,18 +34,22 @@ export const Navbar = ({setShowModal,setIsCreated, setModalType}) => {
           </div>
         </div>
         <div>
-          <h2 className="text-white"><span className="me-2"><i class="fs-4 fa-regular fa-newspaper"></i></span>Trello</h2>
+          <h2 className="text-white">
+            <span className="me-2">
+              <i class="fs-4 fa-regular fa-newspaper"></i>
+            </span>
+            Trello
+          </h2>
         </div>
 
         <div className="row align-items-center">
           <div className="col-auto pe-0">
             <div
               className="col-auto pe-0"
-              onClick={()=>{
-                setIsCreated(true)
-                setShowModal(true)
+              onClick={() => {
+                setIsCreated(true);
+                setShowModal(true);
                 setModalType("");
-                
               }}
             >
               <p className="btn glass-morphism my-auto">

@@ -17,7 +17,6 @@ function AddCard({
   const [title, setTitle] = useState("");
   const [status, setStatus] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [showDeleteButton, setShowDeleteButton] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -39,47 +38,29 @@ function AddCard({
 
   const handleCardData = (event) => {
     event.preventDefault();
-    if (isCreated) {
-      console.log("Form submitted");
-      if (!title || !description || !status) {
-        setErrorMessage("All fields are required.");
-        return;
-      }
-      const existingCards = JSON.parse(localStorage.getItem("cards")) || [];
-      const newCard = {
-        id: new Date().getTime(),
-        title: title,
-        description: description,
-        status: status,
-      };
-      const updatedCards = [...existingCards, newCard];
-      localStorage.setItem("cards", JSON.stringify(updatedCards));
-      resetForm();
-      setShowModal(false);
-      setIsCreated(true);
-      toggleRefresh();
-    } else {
-      if (!title || !description || !status) {
-        setErrorMessage("All fields are required.");
-        return;
-      }
-      const existingCards = JSON.parse(localStorage.getItem("cards")) || [];
-      const updatedCardData = existingCards?.map((item) => {
-        if (item?.id === selectedCardId) {
-          return {
-            ...item,
-            title: title,
-            description: description,
-            status: status,
-          };
-        } else return item;
-      });
-      localStorage.setItem("cards", JSON.stringify(updatedCardData));
-      resetForm();
-      setShowModal(false);
-      setIsCreated(true);
-      toggleRefresh();
+    if (!title || !description || !status) {
+      setErrorMessage("All fields are required.");
+      return;
     }
+    const existingCards = JSON.parse(localStorage.getItem("cards")) || [];
+    const newCard = {
+      id: new Date().getTime(),
+      title,
+      description,
+      status,
+    };
+    const updatedCards = isCreated
+      ? [...existingCards, newCard]
+      : existingCards.map((item) =>
+          item.id === selectedCardId
+            ? { ...item, title, description, status }
+            : item
+        );
+    localStorage.setItem("cards", JSON.stringify(updatedCards));
+    resetForm();
+    setShowModal(false);
+    setIsCreated(true);
+    toggleRefresh();
   };
 
   const resetForm = () => {
@@ -111,10 +92,10 @@ function AddCard({
     cardDelete.splice(cardIndexToDelete, 1);
     localStorage.setItem("cards", JSON.stringify(cardDelete));
     resetForm();
+    toggleRefresh();
     setShowModal(false);
     setIsCreated(true);
     setModalType("");
-    toggleRefresh();
   };
 
   return (
